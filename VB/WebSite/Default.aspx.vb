@@ -8,7 +8,7 @@ Imports System.Web.UI
 Imports System.Web.UI.WebControls
 Imports System.Web.UI.WebControls.WebParts
 Imports System.Web.UI.HtmlControls
-Imports DevExpress.Web.ASPxEditors
+Imports DevExpress.Web
 
 Partial Public Class Grid_Editing_FastEdit_Default
     Inherits System.Web.UI.Page
@@ -16,10 +16,10 @@ Partial Public Class Grid_Editing_FastEdit_Default
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs)
 
     End Sub
-    Protected Sub ASPxGridView1_CustomJSProperties(ByVal sender As Object, ByVal e As DevExpress.Web.ASPxGridView.ASPxGridViewClientJSPropertiesEventArgs)
+    Protected Sub ASPxGridView1_CustomJSProperties(ByVal sender As Object, ByVal e As DevExpress.Web.ASPxGridViewClientJSPropertiesEventArgs)
         e.Properties("cpIsEditing") = ASPxGridView1.IsEditing
     End Sub
-    Protected Sub ASPxGridView1_CellEditorInitialize(ByVal sender As Object, ByVal e As DevExpress.Web.ASPxGridView.ASPxGridViewEditorEventArgs)
+    Protected Sub ASPxGridView1_CellEditorInitialize(ByVal sender As Object, ByVal e As DevExpress.Web.ASPxGridViewEditorEventArgs)
         Dim box As ASPxTextBox = TryCast(e.Editor, ASPxTextBox)
         If box Is Nothing Then
             Return
